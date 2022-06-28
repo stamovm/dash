@@ -5,10 +5,8 @@ import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Link from '../src/Link'
-import ProTip from '../src/ProTip'
-import Copyright from '../src/Copyright'
 
-const About: NextPage = () => {
+const Test: NextPage = () => {
   return (
     <Container maxWidth="lg">
       <Box
@@ -21,18 +19,16 @@ const About: NextPage = () => {
         }}
       >
         <Typography variant="h4" component="h1" gutterBottom>
-          About
+          Test Page
         </Typography>
-
         <Box maxWidth="sm">
           <Button variant="contained" component={Link} noLinkStyle href="/">
             Go to the home page
           </Button>
         </Box>
-        <ProTip />
       </Box>
     </Container>
   )
 }
 
-export default About
+export default Test

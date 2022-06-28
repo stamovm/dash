@@ -1,11 +1,11 @@
-import * as React from 'react';
-import type { NextPage } from 'next';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Link from '../src/Link';
-import ProTip from '../src/ProTip';
-import Copyright from '../src/Copyright';
+import * as React from 'react'
+import type { NextPage } from 'next'
+import Container from '@mui/material/Container'
+import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
+import Link from '../src/Link'
+import Copyright from '../src/Copyright'
+import NavBar from '../components/NavBar'
 
 const Home: NextPage = () => {
   return (
@@ -20,16 +20,17 @@ const Home: NextPage = () => {
         }}
       >
         <Typography variant="h4" component="h1" gutterBottom>
-          MUI v5 + Next.js with TypeScript example
+          My dashboard Website
         </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
+        <Link href="/test" color="secondary">
+          Test Page
         </Link>
-        <ProTip />
-        <Copyright />
+        <Link href="/about" color="secondary">
+          About page
+        </Link>
       </Box>
     </Container>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
