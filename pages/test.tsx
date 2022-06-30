@@ -5,6 +5,7 @@ import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import HomeIcon from '@mui/icons-material/Home'
 import Link from '../src/Link'
+import TextField from '@mui/material/TextField'
 
 const myStyle = {
   color: 'darkslategray',
@@ -28,12 +29,20 @@ const Test: NextPage = () => {
         <Typography variant="h4" component="h1" gutterBottom>
           Test Page
         </Typography>
-        <Typography variant="h5" color="purple">
-          Testing the typography component
-        </Typography>
-        <Typography variant="h6" color="secondary">
-          Testing the typography component 2
-        </Typography>
+
+        <form>
+          <TextField
+            id="txtField"
+            label="my field"
+            // variant="standard"
+            // value={'abc'}
+            // color="primary"
+            fullWidth
+            required
+            sx={{ my: 5 }}
+            // onChange={}
+          />
+        </form>
         <Box maxWidth="sm">
           <Button
             variant="contained"
@@ -46,8 +55,7 @@ const Test: NextPage = () => {
             Go to the home page
           </Button>
         </Box>
-        <div>test component</div>
-        <HomeIcon color="error" />
+        <HomeIcon color="secondary" />
       </Box>
     </Container>
   )
