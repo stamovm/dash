@@ -1,9 +1,8 @@
 import type { NextPage } from 'next'
-import Layout from '../components/Layout'
 
 const Home: NextPage = () => {
   return (
-    <Layout title="Dashboard">
+    <>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
         <div className="p-3 transition ease-in delay-500 card hover:bg-teal-100">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste unde
@@ -33,7 +32,7 @@ const Home: NextPage = () => {
           iste!
         </div>
       </div>
-    </Layout>
+    </>
   )
 }
 

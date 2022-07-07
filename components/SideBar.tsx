@@ -34,14 +34,14 @@ const Sidebar = ({ showSidebar, setShowSidebar }: IProps) => {
         </svg>
       )}
       <div
-        className={`top-0 left-[-10rem] w-40 bg-gray-500  p-4 pt-14 text-white fixed h-full z-40  ease-in-out duration-300 ${
+        className={`top-0 left-[-10rem] w-40 bg-gray-700/70  p-4 pt-14 text-white fixed h-full z-40  ease-in-out duration-300 ${
           showSidebar ? 'translate-x-full ' : 'translate-x-0'
         }`}
       >
         {navRoutes.map((route: any) => (
-          <div key={route.id} className="">
+          <div key={route.id} className="mb-1 ml-2">
             <Link href={route.link}>
-              <a className="mt-4 text-xl font-semibold text-white hover:text-teal-400">
+              <a className="text-xl font-semibold text-white hover:text-teal-400">
                 {route.label}
               </a>
             </Link>
