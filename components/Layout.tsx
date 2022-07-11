@@ -8,7 +8,7 @@ type Props = {
   children?: React.ReactNode
 }
 
-const Layout = ({ title, children }: Props) => {
+const Layout = ({ title, children }: Props): React.ReactElement => {
   const [showSidebar, setShowSidebar] = useState<boolean>(false)
 
   useEffect(() => {
