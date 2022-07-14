@@ -2,6 +2,11 @@ import axios from 'axios'
 import type { NextPage } from 'next'
 import { useQuery } from 'react-query'
 
+function formatTime(time: string): string {
+  let tmpTime = `${time.slice(5, 10)}   Time: ${time.slice(11, 16)}`
+  return tmpTime
+}
+
 const Weather: NextPage = () => {
   const { isLoading, error, data } = useQuery('repoData', () =>
     axios
@@ -22,12 +27,17 @@ const Weather: NextPage = () => {
           className="p-3 transition ease-in delay-500 card "
           key={temp.number}
         >
-          <p>Time: {temp?.startTime}</p>
+          <p>{formatTime(temp?.startTime)}</p>
           <p>
-            Temperature: {temp?.temperature} {temp?.temperatureUnit}
+            Temp:{' '}
+            <span className="text-xl text-teal-900 ">{temp?.temperature}</span>{' '}
+            {temp?.temperatureUnit}
           </p>
-          <p>Wind Speed: {temp?.windSpeed}</p>
-          <p>Forecast: {temp?.shortForecast}</p>
+          <p>Wind: {temp?.windSpeed}</p>
+          <p>
+            Forecast:{' '}
+            <span className="text-teal-900 ">{temp?.shortForecast}</span>
+          </p>
           <img src={temp?.icon} alt={temp?.shortForecast}></img>
         </div>
       ))}
