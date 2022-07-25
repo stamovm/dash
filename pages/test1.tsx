@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import GlobalState from '../components/GlobalState'
 
 const Test1: NextPage = () => {
   return (
@@ -10,6 +11,7 @@ const Test1: NextPage = () => {
         tenetur. Natus, ad tempora odio aliquam, sint voluptas, alias quam quis
         laborum libero corrupti voluptatibus nam velit quibusdam magni iste!
       </div>
+      <GlobalState />
     </div>
   )
 }
