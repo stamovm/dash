@@ -2,5 +2,7 @@
   { "id": 1, "label": "Home", "link": "/" },
   { "id": 2, "label": "Weather", "link": "/weather" },
   { "id": 3, "label": "Test 1", "link": "/test1" },
-  { "id": 4, "label": "Test 2", "link": "/test2" }
+  { "id": 4, "label": "Test 2", "link": "/test2" },
+  { "id": 5, "label": "R-Q Pmon", "link": "/rqpmon" },
+  { "id": 6, "label": "Zust Pmon", "link": "/zuspmon" }
 ]
