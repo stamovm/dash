@@ -15,8 +15,7 @@ const Layout = ({ title, children }: Props): React.ReactElement => {
     const keyDownHandler = (e: { key: string }) => {
       if (e.key === 'n') setShowSidebar((showSidebar) => !showSidebar)
       if (e.key === 'Escape') setShowSidebar(false)
-
-      console.log(`You pressed ${e.key}`)
+      // console.log(`You pressed ${e.key}`)
     }
     document.addEventListener('keydown', keyDownHandler)
     // clean up

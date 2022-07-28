@@ -1,8 +1,11 @@
 import Link from 'next/link'
 import { Dispatch, SetStateAction } from 'react'
-// import { useRouter } from 'next/router'
 const navRoutes = require('../utils/navRoutes.json')
 
+interface IRoute {
+  label: string
+  link: string
+}
 interface IProps {
   showSidebar: boolean
   setShowSidebar: Dispatch<SetStateAction<boolean>>
@@ -32,12 +35,12 @@ const Sidebar = ({ showSidebar, setShowSidebar }: IProps) => {
         </svg>
       )}
       <div
-        className={`top-0 left-[-10rem] w-40 bg-gray-700/70  p-4 pt-14 text-white fixed h-full z-40  ease-in-out duration-500 ${
+        className={`top-0 left-[-10rem] w-40 bg-gray-700/90  p-4 pt-14 text-white fixed h-full z-40  ease-in-out duration-500 ${
           showSidebar ? 'translate-x-full ' : 'translate-x-0'
         }`}
       >
-        {navRoutes.map((route: any) => (
-          <div key={route.id} className="mb-1 ml-2">
+        {navRoutes.map((route: IRoute, i: number) => (
+          <div key={i} className="mb-1 ml-2">
             <Link href={route.link}>
               <a className="text-xl font-semibold text-white hover:duration-300 hover:text-teal-400">
                 {route.label}

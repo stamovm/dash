@@ -19,8 +19,16 @@ a {
   box-sizing: border-box;
 }
 
+.debug {
+  background-color: rgba(0, 100, 0, 0.1) !important;
+  outline: 1px solid limegreen !important;
+}
+.debug2 {
+  border: 1px solid red;
+}
+
 .card {
-  @apply block mb-5 border border-gray-200 rounded-lg shadow-md;
+  @apply border border-gray-200 rounded-lg shadow-md;
 }
 
 .primary-button {
