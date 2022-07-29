@@ -32,5 +32,5 @@ a {
 }
 
 .primary-button {
-  @apply px-4 py-2 rounded shadow outline-none bg-amber-300 hover:bg-amber-400 active:bg-amber-500 transition duration-300 ease-in-out;
+  @apply px-4 py-2 rounded shadow outline-none bg-teal-400 hover:bg-teal-500 active:bg-teal-600 transition duration-300 ease-in-out;
 }

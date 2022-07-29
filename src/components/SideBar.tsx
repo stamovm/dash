@@ -1,28 +1,28 @@
 import Link from 'next/link'
 import { Dispatch, SetStateAction } from 'react'
-const navRoutes = require('../utils/navRoutes.json')
+const navRoutes = require('../data/navRoutes.json')
+import useStore from './GlobalState'
 
 interface IRoute {
   label: string
   link: string
 }
-interface IProps {
-  showSidebar: boolean
-  setShowSidebar: Dispatch<SetStateAction<boolean>>
-}
-const Sidebar = ({ showSidebar, setShowSidebar }: IProps) => {
+
+const Sidebar = () => {
+  const showSidebar = useStore((state) => state.showSidebar)
+  const toggleSidebar = useStore((state) => state.toggleSidebar)
   return (
     <>
       {showSidebar ? (
         <button
           className="fixed top-0 z-50 flex items-center text-4xl text-teal-500 cursor-pointer left-6 hover:duration-300 hover:text-teal-600"
-          onClick={() => setShowSidebar((showSidebar) => !showSidebar)}
+          onClick={toggleSidebar}
         >
           x
         </button>
       ) : (
         <svg
-          onClick={() => setShowSidebar((showSidebar) => !showSidebar)}
+          onClick={toggleSidebar}
           className="fixed z-30 flex items-center cursor-pointer left-15 top-3 hover:duration-300 hover:bg-teal-100"
           fill="#14b8a6"
           viewBox="0 0 100 80"

@@ -1,0 +1,9 @@
+[
+  { "label": "Home", "link": "/" },
+  { "label": "Meme gen", "link": "/memegen" },
+  { "label": "Weather", "link": "/weather" },
+  { "label": "Pokimon", "link": "/pokimon" },
+  { "label": "Zust Pmon", "link": "/test/zuspmon" },
+  { "label": "Test 1", "link": "/test/test1" },
+  { "label": "Test 2", "link": "/test/test2" }
+]

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Sidebar from './SideBar'
+import useStore from './GlobalState'
 
 type Props = {
   title: string
@@ -9,12 +10,12 @@ type Props = {
 }
 
 const Layout = ({ title, children }: Props): React.ReactElement => {
-  const [showSidebar, setShowSidebar] = useState<boolean>(false)
+  const toggleSidebar = useStore((state) => state.toggleSidebar)
 
   useEffect(() => {
     const keyDownHandler = (e: { key: string }) => {
-      if (e.key === 'n') setShowSidebar((showSidebar) => !showSidebar)
-      if (e.key === 'Escape') setShowSidebar(false)
+      if (e.key === 'n') toggleSidebar()
+      if (e.key === 'Escape') toggleSidebar()
       // console.log(`You pressed ${e.key}`)
     }
     document.addEventListener('keydown', keyDownHandler)
@@ -32,10 +33,7 @@ const Layout = ({ title, children }: Props): React.ReactElement => {
       <div className="flex flex-col justify-between min-h-screen ">
         <header>
           <nav className="flex items-center justify-between h-12 px-4 shadow-md">
-            <Sidebar
-              showSidebar={showSidebar}
-              setShowSidebar={setShowSidebar}
-            />
+            <Sidebar />
             <Link href="/">
               <a className="text-lg font-bold pl-14">Dash</a>
             </Link>
