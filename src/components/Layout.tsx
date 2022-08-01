@@ -14,7 +14,6 @@ const Layout = ({ title, children }: Props): React.ReactElement => {
 
   useEffect(() => {
     const keyDownHandler = (e: { key: string }) => {
-      if (e.key === 'n') toggleSidebar()
       if (e.key === 'Escape') toggleSidebar()
       // console.log(`You pressed ${e.key}`)
     }

@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { Dispatch, SetStateAction } from 'react'
 const navRoutes = require('../data/navRoutes.json')
 import useStore from './GlobalState'
 
@@ -11,6 +10,7 @@ interface IRoute {
 const Sidebar = () => {
   const showSidebar = useStore((state) => state.showSidebar)
   const toggleSidebar = useStore((state) => state.toggleSidebar)
+
   return (
     <>
       {showSidebar ? (

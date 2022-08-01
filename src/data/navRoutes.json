@@ -1,9 +1,9 @@
 [
-  { "label": "Home", "link": "/" },
-  { "label": "Meme gen", "link": "/memegen" },
-  { "label": "Weather", "link": "/weather" },
-  { "label": "Pokimon", "link": "/pokimon" },
-  { "label": "Zust Pmon", "link": "/test/zuspmon" },
-  { "label": "Test 1", "link": "/test/test1" },
-  { "label": "Test 2", "link": "/test/test2" }
+  { "test": false, "label": "Home", "link": "/" },
+  { "test": false, "label": "Meme gen", "link": "/memegen" },
+  { "test": false, "label": "Weather", "link": "/weather" },
+  { "test": false, "label": "Pokimon", "link": "/pokimon" },
+  { "test": true, "label": "Zust Pmon", "link": "/test/zuspmon" },
+  { "test": true, "label": "Test 1", "link": "/test/test1" },
+  { "test": true, "label": "Test 2", "link": "/test/test2" }
 ]

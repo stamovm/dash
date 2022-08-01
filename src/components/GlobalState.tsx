@@ -2,19 +2,18 @@ import create from 'zustand'
 
 const getLocalStorage = (key: string) => {
   if (typeof window !== 'undefined') {
-    console.log(JSON.parse(window.localStorage.getItem(key)))
     return JSON.parse(window.localStorage.getItem(key))
   }
 }
 const setLocalStorage = (key: string, value) => {
   if (typeof window !== 'undefined') {
-    console.log(JSON.stringify(value))
     window.localStorage.setItem(key, JSON.stringify(value))
   }
 }
 
 type State = {
   showSidebar: boolean
+  showTestNav: boolean
   myCount: number
   myString: string
 
@@ -23,11 +22,13 @@ type State = {
 }
 
 const useStore = create<State>((set) => ({
-  showSidebar: getLocalStorage('showSidebar') || false,
-  toggleSidebar: () =>
+  showSidebar: false,
+  toggleSidebar: () => set((state) => ({ showSidebar: !state.showSidebar })),
+  showTestNav: getLocalStorage('showTestNav') || false,
+  toggleTestNav: () =>
     set((state) => {
-      setLocalStorage('showSidebar', !state.showSidebar)
-      return { showSidebar: !state.showSidebar }
+      setLocalStorage('showTestNav', !state.showTestNav)
+      return { showTestNav: !state.showTestNav }
     }),
   myCount: 0,
   incrMyCount: (by) => set((state) => ({ myCount: state.myCount + by })),
