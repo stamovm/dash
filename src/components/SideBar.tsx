@@ -3,6 +3,7 @@ const navRoutes = require('../data/navRoutes.json')
 import useStore from './GlobalState'
 
 interface IRoute {
+  test: boolean
   label: string
   link: string
 }
@@ -10,6 +11,7 @@ interface IRoute {
 const Sidebar = () => {
   const showSidebar = useStore((state) => state.showSidebar)
   const toggleSidebar = useStore((state) => state.toggleSidebar)
+  const showTestNav = useStore((state) => state.showTestNav)
 
   return (
     <>
@@ -39,15 +41,17 @@ const Sidebar = () => {
           showSidebar ? 'translate-x-full ' : 'translate-x-0'
         }`}
       >
-        {navRoutes.map((route: IRoute, i: number) => (
-          <div key={i} className="mb-1 ml-2">
-            <Link href={route.link}>
-              <a className="text-xl font-semibold text-white hover:duration-300 hover:text-teal-400">
-                {route.label}
-              </a>
-            </Link>
-          </div>
-        ))}
+        {navRoutes
+          .filter((route: IRoute) => (showTestNav ? true : !route.test))
+          .map((route: IRoute, i: number) => (
+            <div key={i} className="mb-1 ml-2">
+              <Link href={route.link}>
+                <a className="text-xl font-semibold text-white hover:duration-300 hover:text-teal-400">
+                  {route.label}
+                </a>
+              </Link>
+            </div>
+          ))}
       </div>
     </>
   )

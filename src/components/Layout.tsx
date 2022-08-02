@@ -11,10 +11,13 @@ type Props = {
 
 const Layout = ({ title, children }: Props): React.ReactElement => {
   const toggleSidebar = useStore((state) => state.toggleSidebar)
+  const toggleTestNav = useStore((state) => state.toggleTestNav)
 
   useEffect(() => {
     const keyDownHandler = (e: { key: string }) => {
       if (e.key === 'Escape') toggleSidebar()
+      if (e.key === '-') toggleTestNav()
+
       // console.log(`You pressed ${e.key}`)
     }
     document.addEventListener('keydown', keyDownHandler)
