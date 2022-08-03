@@ -1,5 +1,6 @@
 [
   { "test": false, "label": "Home", "link": "/" },
+  { "test": false, "label": "News", "link": "/news" },
   { "test": false, "label": "Meme gen", "link": "/memegen" },
   { "test": false, "label": "Weather", "link": "/weather" },
   { "test": false, "label": "Pokimon", "link": "/pokimon" },
